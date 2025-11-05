@@ -1,260 +1,317 @@
-:root {
-  --red: #d61f26;
-  --soft: #f5f7f8;
-  --muted: #7b8a8a;
-  --radius: 14px;
-  --shadow: 0 6px 18px rgba(13,13,13,0.06);
+/* styles.css - mobile-first, inspirado no app Santander */
+/* Reset simples */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  background:#f6f7f8;
+  color:#222;
+  line-height:1.2;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
 }
 
-body {
-  margin: 0;
-  background: #fff;
-  font-family: 'Roboto', sans-serif;
-  color: #111;
+/* statusbar (apenas visual) */
+.statusbar{
+  height:26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:4px 14px;
+  font-size:13px;
+  color:#111;
 }
 
-.device {
-  max-width: 420px;
-  margin: 0 auto;
-  min-height: 100vh;
-  background: #fff;
+/* cores e variáveis */
+:root{
+  --santander:#ec0000; /* tom mais fiel */
+  --muted:#8f9aa3;
+  --card-bg:#ffffff;
+  --soft:#f1f5f6;
+  --shadow: 0 6px 20px rgba(0,0,0,0.08);
+  --glass: rgba(255,255,255,0.92);
+}
+
+/* Top red header */
+.top-red{
+  background:var(--santander);
+  color:#fff;
+  padding:18px 18px 20px;
+  position:relative;
+  border-bottom-left-radius:0;
+  -webkit-user-select:none;
+}
+
+/* hamburger */
+.btn-hamburger{
+  position:absolute;
+  left:12px;
+  top:18px;
+  width:40px;
+  height:36px;
+  background:transparent;
+  border:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px;
+  z-index:20;
+}
+.btn-hamburger span{
+  display:block;
+  width:20px;
+  height:2px;
+  background:#fff;
+  margin:3px 0;
+  border-radius:2px;
+}
+
+/* top icons right */
+.top-icons{
+  position:absolute;
+  right:10px;
+  top:12px;
+  display:flex;
+  gap:10px;
+}
+.icon-btn{
+  background:transparent;
+  border:0;
+  font-size:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  padding:8px;
+  border-radius:8px;
+}
+
+/* balance area */
+.balance-wrap{
+  max-width:520px;
+  margin:34px auto 10px;
+  text-align:center;
+  padding:0 14px;
+}
+.balance-sub{opacity:0.95;font-size:13px;margin-bottom:6px}
+.balance{font-size:36px;font-weight:700;letter-spacing:0.3px}
+.balance-small{font-size:13px;opacity:0.95;margin-top:6px}
+.access-extract{
+  display:inline-block;
+  margin-top:10px;
+  text-decoration:underline;
+  color:#fff;
+  font-weight:500;
+  font-size:13px;
+}
+
+/* round action buttons */
+.round-actions{
+  display:flex;
+  gap:14px;
+  justify-content:space-around;
+  padding:14px 8px 12px;
+  margin-top:6px;
+  flex-wrap:wrap;
+}
+.round{
+  width:68px;
+  text-align:center;
+  color:#fff;
+  margin-bottom:8px;
+  background:transparent;
+  border:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+}
+.round .icon{
+  width:56px;height:56px;margin:0 auto;display:block;
+  stroke:#fff;
+  color:#fff;
+  opacity:0.98;
+  border-radius:14px;
+}
+
+/* main content */
+.main-content{
+  padding:16px;
+  padding-bottom:94px; /* espaço pro bottom nav */
+  background:transparent;
+}
+
+/* section heading */
+.main-content h2{
+  font-size:20px;
+  margin:12px 6px 14px;
+  color:#222;
+}
+
+/* cards */
+.card{
+  background:var(--card-bg);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:14px;
+  margin-bottom:16px;
+}
+
+/* account card */
+.account-card{
+  display:block;
+}
+.account-card .card-icon{
+  width:48px;height:48px;border-radius:10px;background:#f3f7f8;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px;
+}
+.account-card small{color:#6d6d6d;font-size:13px}
+.account-card h3{font-size:17px;margin-top:6px;display:flex;align-items:center;justify-content:space-between}
+.card-footer{
+  display:flex;
+  justify-content:space-between;
+  margin-top:12px;
+  background:#f1f6f7;
+  padding:12px;
+  border-radius:8px;
+}
+.card-footer .val{font-weight:700;margin-top:4px}
+
+/* quick actions row */
+.quick-actions{
+  display:flex;
+  justify-content:space-around;
+  margin:16px 0 24px;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.q{display:flex;flex-direction:column;align-items:center;gap:8px;width:72px;color:#0f6b67;background:transparent;border:0}
+.q .q-icon{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #0f6b67;padding:8px;}
+
+/* credit card mock */
+.credit-card .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.mini-card-visual{width:72px;height:44px;background:#000;color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px}
+.badge{background:#777;color:#fff;padding:6px 10px;border-radius:16px;font-size:12px}
+
+/* investments link */
+.investments h2{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:18px}
+.link-block{color: #0f6b67;text-decoration:none;font-weight:600;font-size:14px}
+
+/* bottom nav fixed */
+.bottom-nav{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  background:#fff;border-top:1px solid #eee;padding:8px 10px;
+  display:flex;justify-content:space-around;align-items:center;
+  z-index:25;
+  box-shadow: 0 -6px 18px rgba(0,0,0,0.04);
+  height:64px;
+}
+.nav-btn{
+  background:transparent;border:0;font-size:12px;color:#777;display:flex;flex-direction:column;align-items:center;gap:6px;padding:4px 6px;border-radius:8px;
+  width:20%;
+}
+.nav-btn svg{width:20px;height:20px}
+.nav-btn span{font-size:11px}
+.nav-btn.active{color:var(--santander);font-weight:600}
+.nav-btn:active{transform:translateY(1px)}
+
+/* overlay + sidepanel */
+.overlay{
+  position:fixed;inset:0;display:none;z-index:40;
+}
+.overlay.show{display:block}
+.overlay-bg{
+  position:fixed;inset:0;background:rgba(0,0,0,0.28);backdrop-filter: blur(2px);
+  z-index:41;border:0;
+}
+.sidepanel{
+  position:fixed;
+  left:0;top:0;bottom:0;
+  width:86%;
+  max-width:420px;
+  background:var(--glass);
+  padding:18px;
+  transform:translateX(-110%);
+  box-shadow: 6px 0 30px rgba(0,0,0,0.14);
+  transition:transform 320ms cubic-bezier(.2,.9,.2,1);
+  overflow-y:auto;
+  z-index:42;
+  border-top-right-radius:12px;
+  border-bottom-right-radius:12px;
+}
+.overlay.show .sidepanel{transform:translateX(0%)}
+
+/* close button */
+.close-x{
+  position:absolute;right:12px;top:12px;border:0;background:transparent;font-size:20px;padding:6px;border-radius:8px;
+}
+
+/* profile */
+.profile{display:flex;align-items:center;gap:12px;margin-top:10px;margin-bottom:14px}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--santander);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+.name{font-size:16px;font-weight:500}
+
+/* icons grid */
+.icons-grid{display:flex;gap:16px;margin:8px 6px 18px;flex-wrap:wrap}
+.icon-item{display:flex;flex-direction:column;align-items:center;gap:8px;background:transparent;border:0;padding:8px;width:48%;text-align:center}
+.icon-circle{height:52px;width:52px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;border:2px solid rgba(236,0,0,0.08);color:var(--santander)}
+
+/* panel card lists */
+.panel-card{background:#fff;padding:12px;border-radius:12px;box-shadow:var(--shadow);margin:12px 0}
+.menu-list{list-style:none}
+.menu-list li{display:flex;align-items:center;justify-content:space-between;padding:12px 6px;border-top:1px solid #f0f0f0}
+.menu-list li:first-child{border-top:0}
+.li-icon{width:34px;display:inline-block}
+.chev{color:#b5b5b5}
+.chev.red{color:var(--santander)}
+
+/* small text */
+.small{font-size:13px;color:#6d6d6d}
+
+/* accessibility focus */
+button:focus, a:focus { outline: 3px solid rgba(236,0,0,0.14); outline-offset:2px; border-radius:8px; }
+
+/* responsive upscales */
+@media (min-width:540px){
+  .top-red{padding:24px 36px 28px}
+  .balance{font-size:44px}
+  .round{width:92px}
+  .sidepanel{width:420px}
+  .main-content{padding:20px;padding-bottom:110px}
+  .bottom-nav{height:70px}
+}
+.hamburger {
   position: relative;
-}
-
-.appbar {
-  background: var(--red);
-  color: #fff;
-  padding: 14px 16px;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-}
-
-.top-row {
+  width: 30px;
+  height: 22px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+  padding: 0;
 }
 
-.header-actions i {
-  margin-left: 12px;
-  font-size: 18px;
-}
-
-main {
-  padding: 18px 16px 110px;
-}
-
-.balance-card {
-  background: var(--red);
-  color: #fff;
-  border-radius: 12px;
-  padding: 18px;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-
-.balance-card .title { font-size: 13px; }
-.balance-amount { font-size: 34px; font-weight: 700; }
-.balance-sub { font-size: 13px; opacity: 0.95; margin-bottom: 12px; }
-.balance-links a { color: #fff; text-decoration: underline; }
-
-.quick-actions {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 14px;
-}
-
-.qa-btn {
-  width: 64px; height: 64px; border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  color: #fff; font-size: 12px;
-}
-
-.qa-btn i { font-size: 22px; margin-bottom: 6px; }
-
-.account-card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 14px;
-  margin-top: 12px;
-  box-shadow: var(--shadow);
-}
-
-.account-top {
-  display: flex; align-items: center; gap: 12px;
-}
-
-.account-icon {
-  width: 48px; height: 48px;
-  background: #f7f7f8;
-  border-radius: 10px;
-  display: flex; justify-content: center; align-items: center;
-  color: var(--red);
-  font-size: 20px;
-}
-
-.account-footer {
-  display: flex; justify-content: space-between;
-  margin-top: 8px;
-  border-top: 1px solid #f0f0f0;
-  padding-top: 8px;
-}
-
-.acc-left { font-size: 14px; color: var(--muted); }
-.acc-amount { font-weight: 700; font-size: 18px; }
-
-.card-slab {
-  display: flex; align-items: center;
-  background: #f2f2f2;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: var(--shadow);
-}
-
-.card-image {
-  width: 64px; height: 40px;
-  background: linear-gradient(90deg,#a40013,#3b0007);
-  border-radius: 6px;
-  margin-right: 12px;
-}
-
-.card-info { flex: 1; }
-.card-name { font-weight: 700; font-size: 15px; }
-.card-sub { color: var(--muted); font-size: 13px; }
-
-.tag {
-  background: #fff;
-  border-radius: 12px;
-  padding: 6px 10px;
-  font-size: 12px;
-  border: 1px solid #e6e6e6;
-}
-
-.card-actions {
-  margin-top: 12px;
-  display: flex;
-  justify-content: space-around;
-}
-
-.card-action {
-  display: flex; flex-direction: column;
-  align-items: center;
-  font-size: 13px; color: #2a5b5b;
-}
-
-.circle {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: #f7f8f8;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-  margin-bottom: 8px;
-}
-
-.inv-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: var(--shadow);
-}
-
-.inv-title { font-weight: 700; margin-bottom: 4px; }
-.inv-sub { color: var(--muted); font-size: 13px; }
-.inv-amount { font-weight: 700; font-size: 18px; color: #111; }
-
-.invest-actions {
-  display: flex; justify-content: space-around;
-  margin-top: 12px;
-}
-
-.invest-actions div {
-  text-align: center;
-}
-
-.invest-actions i {
-  background: #f7f7f7;
-  padding: 12px;
-  border-radius: 50%;
-  font-size: 18px;
-  display: inline-block;
-  margin-bottom: 6px;
-}
-
-.help-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: var(--shadow);
-}
-
-.help-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.benefits {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 12px;
-}
-
-.benefit-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 10px;
-  box-shadow: var(--shadow);
-}
-
-.benefit-image {
-  height: 100px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-}
-
-.benefit-image.red { background: var(--red); }
-.benefit-image.teal { background: #6f9fa0; }
-
-.bottom-nav {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 8px;
+.hamburger .bar {
   width: 100%;
-  max-width: 420px;
-  background: transparent;
-  z-index: 30;
+  height: 3px;
+  background-color: #d40000; /* vermelho Santander */
+  border-radius: 3px;
+  transition: all 0.3s ease;
 }
 
-.bottom-inner {
-  display: flex;
-  justify-content: space-between;
-  background: rgba(255,255,255,0.98);
-  border-radius: 14px;
-  padding: 8px 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+/* Quando o menu está ativo (vira X) */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
 }
-
-.nav-item {
-  text-align: center;
-  font-size: 12px;
-  color: #6b6b6b;
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
 }
-
-.nav-item i {
-  font-size: 18px;
-  color: var(--muted);
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
 }
-
-.nav-item.active i,
-.nav-item.active span {
-  color: var(--red);
-  font-weight: 700;
-}
-
