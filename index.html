@@ -1,1 +1,227 @@
- <html lang="pt-BR"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" /> <title>Mock Santander - Mobile</title> <!-- Fonte Roboto --> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> <!-- Ícones Font Awesome --> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- CSS externo --> <link rel="stylesheet" href="style.css" /> </head> <body> <div class="device" role="document"> <!-- top red header --> <header class="appbar" role="banner"> <div class="top-row"> <div class="hamburger"><i class="fa-solid fa-bars"></i></div> <div class="header-actions"> <i class="fa-solid fa-magnifying-glass"></i> <i class="fa-solid fa-eye-slash"></i> <i class="fa-regular fa-bell"></i> </div> </div> </header> <main role="main"> <!-- 1ª tela --> <section> <div class="balance-card"> <div class="title">Saldo Total</div> <div class="balance-amount">R$ 138.419,09</div> <div class="balance-sub">Saldo + limite R$ 138.419,00</div> <div class="balance-links"><a href="#">Acessar extrato</a></div> <div class="quick-actions"> <div class="qa-btn"><i class="fa-solid fa-qrcode"></i><span>Pix</span></div> <div class="qa-btn"><i class="fa-solid fa-hand-holding-dollar"></i><span>Empréstimos</span></div> <div class="qa-btn"><i class="fa-solid fa-clover"></i><span>Dindin</span></div> <div class="qa-btn"><i class="fa-solid fa-ellipsis"></i><span>Mais</span></div> </div> </div> <div class="account-card"> <div class="account-top"> <div class="account-icon"><i class=></i></div> <div> <div class="account-sub">Ag 0140 Cc 02059381-7 | Titular</div> <div class="account-title">Conta Corrente</div> </div> <div><i class="fa-solid fa-chevron-right"></i></div> </div> <div class="account-footer"> <div> <div class="acc-left">Saldo disponível</div> <div class="acc-amount">R$ 98.419,09</div> </div> <div> <div class="acc-left">Limite</div> <div class="acc-amount">R$ 40.000,00</div> </div> </div> </div> </section> <!-- 2ª tela --> <section> <div class="card-slab"> <div class="card-image"></div> <div class="card-info"> <div> <div class="card-sub">Crédito ...9424 | Titular</div> <div class="card-name">FREE VISA</div> </div> <div><span class="tag">FATURA FECHADA</span></div> </div> </div> <div class="card-actions"> <div class="card-action"><div class="circle"><i class="fa-solid fa-phone"></i></div><div>Cartão Online</div></div> <div class="card-action"><div class="circle"><i class="fa-solid fa-file-lines"></i></div><div>Consultar fatura</div></div> <div class="card-action"><div class="circle"><i class="fa-solid fa-sliders"></i></div><div>Meus limites</div></div> <div class="card-action"><div class="circle"><i class="fa-solid fa-divide"></i></div><div>Parcelar compras</div></div> </div> </section> <!-- 3ª tela --> <section> <div class="inv-card"> <div class="inv-title">Carteira de investimentos</div> <div class="inv-sub">Total investido</div> <div class="inv-amount">R$ 470.543,87</div> <div class="invest-actions"> <div><i class="fa-solid fa-arrow-up-right-dots"></i><span>Investir</span></div> <div><i class="fa-solid fa-hand-holding-dollar"></i><span>Resgatar</span></div> <div><i class="fa-solid fa-piggy-bank"></i><span>Reservas</span></div> <div><i class="fa-solid fa-wallet"></i><span>Poupança</span></div> </div> </div> </section> <!-- 4ª tela --> <section> <div class="help-card"> <div class="help-item"> <div><strong>Acessar chat</strong><br><small>Assistente virtual</small></div> <i class="fa-solid fa-chevron-right"></i> </div> <div class="help-item"> <div><strong>Central de ajuda</strong></div> <i class="fa-solid fa-chevron-right"></i> </div> </div> <div class="benefits"> <div class="benefit-card"> <div class="benefit-image red"></div> <div><strong>Quem vai ganhar? Você!</strong><br><small>Aqui, ou você leva até R$4 milhões ou seu dinheiro de volta!</small></div> </div> <div class="benefit-card"> <div class="benefit-image teal"></div> <div><strong>Conheça o Combo Santander+</strong><br><small>Globoplay, consulta online 24h e muito mais por R$29,90/mês.</small></div> </div> </div> </section> </main> <nav class="bottom-nav"> <div class="bottom-inner"> <div class="nav-item active"><i class="fa-solid fa-house"></i><span>Início</span></div> <div class="nav-item"><i class="fa-solid fa-money-bill-transfer"></i><span>Pagar</span></div> <div class="nav-item"><i class="fa-regular fa-credit-card"></i><span>Cartões</span></div> <div class="nav-item"><i class="fa-regular fa-comments"></i><span>Chat</span></div> </div> </nav> </div> </body> </html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Santander - Mock (mobile)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header vermelho -->
+<header class="top-red" role="banner"> <button class="btn-hamburger" aria-label="Abrir menu" id="openMenu"> 
+ <span class="bar"><span>
+ <span class="bar"><span>
+ <span class="bar"><span>
+ </button>
+    <div class="top-icons" aria-hidden="true">
+      <button class="icon-btn" title="Pesquisar">
+        <!-- search -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21L15 15" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="#fff" stroke-width="1.6" fill="none"/></svg>
+      </button>
+      <button class="icon-btn" title="Histórico">
+        <!-- clock -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.6"/><path d="M12 7v6l3 2" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="icon-btn" title="Notificações">
+        <!-- bell -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 17H9a3 3 0 0 1-3-3v-3a6 6 0 0 1 12 0v3a3 3 0 0 1-3 3z" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="balance-wrap">
+      <div class="balance-sub">Saldo Total<span class="info" aria-hidden="true"></span></div>
+      <div class="balance">R$ 138.311,72</div>
+      <div class="balance-small">Saldo + limite R$ 178.311,72</div>
+      <a class="access-extract" href="#" aria-label="Acessar extrato">Acessar extrato</a>
+    </div>
+
+    <div class="round-actions" role="navigation" aria-label="Ações rápidas">
+      <button class="round" aria-label="Pix">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Pix</span>
+      </button>
+
+      <button class="round" aria-label="Empréstimos">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="7" width="12" height="8" rx="1.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 15h12v2H6z" fill="currentColor" opacity="0.15"/></svg>
+        <span>Empréstimos</span>
+      </button>
+
+      <button class="round" aria-label="Dindin - Capitalização">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7c1.7-3 5-3 6 0 1 3-3 6-6 9-3-3-7-6-6-9 1-3 4.3-3 6 0z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span>Dindin</span>
+      </button>
+
+      <button class="round" aria-label="Mais ações">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="1" /><circle cx="12" cy="12" r="1" /><circle cx="18" cy="12" r="1" fill="none" stroke="currentColor" stroke-width="0.8"/></svg>
+        <span>Mais</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Conteúdo -->
+  <main class="main-content" id="main" role="main">
+    <section class="accounts">
+      <h2>Minhas contas Santander</h2>
+
+      <article class="card account-card" role="article" aria-labelledby="acc-title">
+        <div class="card-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#6d6d6d" fill="none" stroke-width="1.2"/></svg>
+        </div>
+
+        <div class="card-body">
+          <small>Ag 0140 Cc 02059381-7 | Titular</small>
+          <h3 id="acc-title">Conta Corrente <span class="chev">›</span></h3>
+        </div>
+
+        <div class="card-footer" aria-hidden="true">
+          <div>
+            <small>Saldo disponível</small>
+            <div class="val">R$ 138.311,72</div>
+          </div>
+          <div>
+            <small>Limite</small>
+            <div class="val">R$ 40.000,00</div>
+          </div>
+        </div>
+      </article>
+
+      <div class="quick-actions" role="group" aria-label="Ações rápidas da conta">
+        <button class="q" aria-label="Comprovantes">
+          <svg class="q-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z" stroke="#0f6b67" fill="none"/></svg>
+          <div>Comprovantes</div>
+        </button>
+
+        <button class="q" aria-label="Limite da conta">
+          <svg class="q-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z" stroke="#0f6b67" fill="none"/></svg>
+          <div>Limite</div>
+        </button>
+
+        <button class="q" aria-label="Trazer dinheiro">
+          <svg class="q-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4h12v16H6z" stroke="#0f6b67" fill="none"/></svg>
+          <div>Trazer</div>
+        </button>
+      </div>
+    </section>
+
+    <section class="cards-and-investments" aria-labelledby="invest-title">
+      <div class="card credit-card" role="article">
+        <div class="card-top">
+          <div class="mini-card-visual" aria-hidden="true">CARD</div>
+          <span class="badge">FATURA ABERTA</span>
+        </div>
+
+        <div class="card-body">
+          <small>Crédito ...9424 | Titular</small>
+          <h3>FREE VISA <span class="chev">›</span></h3>
+          <small>Vence: 01/12/2025 / Melhor data: 25/11/2025</small>
+        </div>
+
+        <div class="card-footer">
+          <div>
+            <small>Valor da fatura</small>
+            <div class="val">R$ 0,00</div>
+          </div>
+          <div>
+            <small>Disponível</small>
+            <div class="val">R$ 80.000,00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="investments">
+        <h2 id="invest-title">Meus investimentos <a class="link-block" href="#" aria-label="Bloquear investimentos">Bloquear</a></h2>
+
+        <div class="card invest-card" role="article">
+          <div class="card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24"><path d="M4 12l4 4 8-8" fill="none" stroke="#0f6b67" stroke-width="2"/></svg>
+          </div>
+          <div class="card-body">
+            <h3>Carteira de investimentos <span class="chev">›</span></h3>
+            <div class="card-footer small">
+              <div>Total investido</div>
+              <div class="val">R$ 470,875,09</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav" role="navigation" aria-label="Barra inferior">
+    <button class="nav-btn active" aria-label="Início">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8v8a1 1 0 0 1-1 1h-6v-6H10v6H4a1 1 0 0 1-1-1v-8z" fill="currentColor"/></svg>
+      <span>Início</span>
+    </button>
+
+    <button class="nav-btn" aria-label="Pagar">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10H4z" stroke="currentColor" fill="none"/></svg>
+      <span>Pagar</span>
+    </button>
+
+    <button class="nav-btn" aria-label="Cartões">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" fill="none"/></svg>
+      <span>Cartões</span>
+    </button>
+
+    <button class="nav-btn" aria-label="Chat">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" fill="none"/></svg>
+      <span>Chat</span>
+    </button>
+  </nav>
+
+  <!-- Overlay / Sidepanel -->
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <aside class="sidepanel" role="dialog" aria-label="Menu principal" aria-modal="true">
+      <button class="close-x" id="closeMenu" aria-label="Fechar menu">✕</button>
+
+      <div class="profile">
+        <div class="avatar" aria-hidden="true">CD</div>
+        <div class="name">Cesar Da Silva Batista</div>
+      </div>
+
+      <div class="icons-grid" role="list">
+        <button class="icon-item" role="listitem" arialabel="Segurança">
+          <div class="icon-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l7 4v6c0 5-4 9-7 10-3-1-7-5-7-10V6l7-4z" stroke="currentColor" fill="none"/></svg>
+          </div>
+          <div>Segurança</div>
+        </button>
+
+        <button class="icon-item" role="listitem" aria-label="Santander ID">
+          <div class="icon-circle">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" stroke="currentColor" fill="none"/><path d="M6 20v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1" stroke="currentColor" fill="none"/></svg>
+          </div>
+          <div>Santander ID</div>
+        </button>
+      </div>
+
+      <hr/>
+
+      <div class="panel-card">
+        <h4>Destaques</h4>
+        <ul class="menu-list">
+          <li><span class="li-icon" aria-hidden="true">★</span> Novidades no App <span class="chev red">›</span></li>
+          <li><span class="li-icon" aria-hidden="true">🌐</span> Outros Bancos <span class="chev red">›</span></li>
+          <li><span class="li-icon" aria-hidden="true">🛍️</span> Shopping <span class="chev red">›</span></li>
+          <li><span class="li-icon" aria-hidden="true">💰</span> Minhas Reservas <span class="chev red">›</span></li>
+        </ul>
+      </div>
+
+      <div class="panel-card">
+        <h4>Dia a dia</h4>
+        <ul class="menu-list">
+          <li><span class="li-icon" aria-hidden="true">📄</span> Saldo e extrato <span class="chev red">›</span></li>
+          <li><span class="li-icon" aria-hidden="true">💸</span> Pagar e transferir <span class="chev red">›</span></li>
+        </ul>
+      </div>
+    </aside>
+
+    <button class="overlay-bg" id="overlayBg" aria-label="Fechar menu" tabindex="-1"></button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
